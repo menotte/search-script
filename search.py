@@ -31,9 +31,9 @@ def get_previous_usernames(username):
     if uuid is not None:
         usernames = get_usernames(uuid)
         if len(usernames) > 0:
-            print(f"Usernames for {username}:")
+            print(f"{Fore.RED}Usernames for {username}:{Style.RESET_ALL}")
             for name in usernames:
-                print(f"{Fore.RED}Username:{Style.RESET_ALL} {name}")
+                print(f"Username: {name}")
                 search(name)
         else:
             print("No usernames found for the user.")
@@ -86,16 +86,16 @@ while True:
     command = input(f"\n{Fore.GREEN}Command number: {Style.RESET_ALL}")
 
     if command == "1":
-        query = input("Enter search query: ")
+        query = input(f"{Fore.RED}Enter search query:{Style.RESET_ALL} ")
         search(query)
     elif command == "2":
-        username = input("Enter Minecraft username: ")
+        username = input(f"{Fore.RED}Enter Minecraft username:{Style.RESET_ALL} ")
         get_previous_usernames(username)
     elif command == "3":
-        query = input("Enter Wakanim search query: ")
+        query = input(f"{Fore.RED}Enter Wakanim search query:{Style.RESET_ALL} ")
         wakanim_search(query)
     elif command == "4":
-        query = input("Enter Facebook search query: ")
+        query = input(f"{Fore.RED}Enter Facebook search query:{Style.RESET_ALL} ")
         france_search(query)
     elif command == "5":
         break
