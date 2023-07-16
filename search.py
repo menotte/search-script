@@ -2,6 +2,7 @@ import os
 import glob
 import json
 import re
+from colorama import Fore, Style
 
 def search(query):
     command = f"findstr /S /I /C:'{query}' database/*"
@@ -32,7 +33,7 @@ def get_previous_usernames(username):
         if len(usernames) > 0:
             print(f"Usernames for {username}:")
             for name in usernames:
-                print(name)
+                print(f"{Fore.RED}Username:{Style.RESET_ALL} {name}")
                 search(name)
         else:
             print("No usernames found for the user.")
@@ -55,8 +56,9 @@ def france_search(query):
                     lines = content.splitlines()
                     for line in lines:
                         if query.lower() in line.lower():
+                            line = line.replace(query, f"{Fore.RED}{query}{Style.RESET_ALL}")
                             print(f"Found in {file_path}:")
-                            print(line)
+                            print(f"Username: {line}")
                             print()
             except Exception as e:
                 print(f"Error occurred while reading {file_path}: {e}")
