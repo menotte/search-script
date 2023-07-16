@@ -63,15 +63,27 @@ def france_search(query):
             except Exception as e:
                 print(f"Error occurred while reading {file_path}: {e}")
 
+title = r'''
+   _____                     _     _____  ____  
+  / ____|                   | |   |  __ \|  _ \ 
+ | (___   ___  __ _ _ __ ___| |__ | |  | | |_) |
+  \___ \ / _ \/ _` | '__/ __| '_ \| |  | |  _ < 
+  ____) |  __/ (_| | | | (__| | | | |__| | |_) |
+ |_____/ \___|\__,_|_|  \___|_| |_|_____/|____/ 
+                                                
+                                                '''
+
+print(f"{Fore.GREEN}{title.center(50)}{Style.RESET_ALL}")
+print()
+
 while True:
-    print(f"{Fore.GREEN}Enter a command:{Style.RESET_ALL}\n")
     print(f"[{Fore.GREEN}1{Style.RESET_ALL}] search")
     print(f"[{Fore.GREEN}2{Style.RESET_ALL}] final")
-    print(f"[{Fore.GREEN}3{Style.RESET_ALL}] wak")
-    print(f"[{Fore.GREEN}4{Style.RESET_ALL}] fb")
+    print(f"[{Fore.GREEN}3{Style.RESET_ALL}] wakanim")
+    print(f"[{Fore.GREEN}4{Style.RESET_ALL}] facebook")
     print(f"[{Fore.GREEN}5{Style.RESET_ALL}] exit")
 
-    command = input("\nEnter the command number: ")
+    command = input(f"\n{Fore.GREEN}Command number: {Style.RESET_ALL}")
 
     if command == "1":
         query = input("Enter search query: ")
@@ -83,7 +95,7 @@ while True:
         query = input("Enter Wakanim search query: ")
         wakanim_search(query)
     elif command == "4":
-        query = input("Enter France search query: ")
+        query = input("Enter Facebook search query: ")
         france_search(query)
     elif command == "5":
         break
