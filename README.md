@@ -5,9 +5,9 @@ need to have a windows of your browser with a connection to laby.net
 
 Script should look like this
 
-![alt text](https://imgur.com/qzhp3Se)
+![img111](https://imgur.com/qzhp3Se)
 
 
 And your folder shall look like that
 
-![alt text](https://imgur.com/IID1HZF)
+![img](https://imgur.com/IID1HZF)
