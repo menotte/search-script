@@ -64,23 +64,30 @@ def france_search(query):
                 print(f"Error occurred while reading {file_path}: {e}")
 
 while True:
-    command = input("Enter a command (search, final, wak, fb): ")
-    
-    if command == "search":
+    print(f"{Fore.GREEN}Enter a command:{Style.RESET_ALL}\n")
+    print(f"[{Fore.GREEN}1{Style.RESET_ALL}] search")
+    print(f"[{Fore.GREEN}2{Style.RESET_ALL}] final")
+    print(f"[{Fore.GREEN}3{Style.RESET_ALL}] wak")
+    print(f"[{Fore.GREEN}4{Style.RESET_ALL}] fb")
+    print(f"[{Fore.GREEN}5{Style.RESET_ALL}] exit")
+
+    command = input("\nEnter the command number: ")
+
+    if command == "1":
         query = input("Enter search query: ")
         search(query)
-    elif command == "final":
+    elif command == "2":
         username = input("Enter Minecraft username: ")
         get_previous_usernames(username)
-    elif command == "wak":
+    elif command == "3":
         query = input("Enter Wakanim search query: ")
         wakanim_search(query)
-    elif command == "fb":
+    elif command == "4":
         query = input("Enter France search query: ")
         france_search(query)
-    elif command == "exit":
+    elif command == "5":
         break
     else:
-        print("Invalid command. Please try again.")
+        print("Invalid command number. Please try again.")
 
 print("Script terminated.")
