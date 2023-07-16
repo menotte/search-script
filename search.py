@@ -33,7 +33,7 @@ def get_previous_usernames(username):
         if len(usernames) > 0:
             print(f"{Fore.RED}Usernames for {username}:{Style.RESET_ALL}")
             for name in usernames:
-                print(f"Username: {name}")
+                print(f"{Fore.RED}Username: {name}{Style.RESET_ALL}")
                 search(name)
         else:
             print("No usernames found for the user.")
