@@ -1,13 +1,13 @@
-search all minecraft username with final command or search one username with search command
+# search all minecraft username with final command or search one username with search command
 
-need to have a windows of your browser with a connection to laby.net
+# sometimes need to have a windows of your browser with a connection to laby.net (for final command)
 
 
-Script should look like this
+# Script should look like this
 
 ![img111](https://imgur.com/qzhp3Se)
 
 
-And your folder shall look like that
+# And your folder shall look like that
 
 ![img](https://imgur.com/IID1HZF)
