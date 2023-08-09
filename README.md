@@ -1,5 +1,3 @@
-# i added command final wakanim to search all previous username of a minecrafter in wakanim folder !
-
 # you need ripgrep to use the script
 
 # search all minecraft username with final command or search one username with search command
