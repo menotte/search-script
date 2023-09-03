@@ -58,6 +58,12 @@ def twitter_search(query):
 def deezer_search(query):
     search(query, "deezer/")
 
+def twitch_search(query):
+    search(query, "twitch/")
+
+def canva_search(query):
+    search(query, "canva/")
+
 title = """
    _____                     _     
   / ____|                   | |    
@@ -79,7 +85,9 @@ while True:
     print(f"[{Fore.GREEN}6{Style.RESET_ALL}] twitter")
     print(f"[{Fore.GREEN}7{Style.RESET_ALL}] deezer")
     print(f"[{Fore.GREEN}8{Style.RESET_ALL}] facebook")
-    print(f"[{Fore.GREEN}9{Style.RESET_ALL}] exit")
+    print(f"[{Fore.GREEN}9{Style.RESET_ALL}] twitch")
+    print(f"[{Fore.GREEN}10{Style.RESET_ALL}] canva")
+    print(f"[{Fore.GREEN}11{Style.RESET_ALL}] exit")
 
     command = input(f"\n{Fore.GREEN}Enter the command number:{Style.RESET_ALL} ")
 
@@ -88,7 +96,7 @@ while True:
         search(query, "minecraft/")
     elif command == "2":
         username = input(f"{Fore.RED}Enter Minecraft username:{Style.RESET_ALL} ")
-        directory = input(f"{Fore.RED}Enter directory to search in : {Style.RESET_ALL}")
+        directory = input(f"{Fore.RED}Enter directory to search in (e.g., 'database/'): {Style.RESET_ALL}")
         get_previous_usernames(username, directory)
     elif command == "3":
         query = input(f"{Fore.RED}Enter Wakanim search query:{Style.RESET_ALL} ")
@@ -109,6 +117,12 @@ while True:
         query = input(f"{Fore.RED}Enter Facebook search query:{Style.RESET_ALL} ")
         facebook_search(query)
     elif command == "9":
+        query = input(f"{Fore.RED}Enter Twitch search query:{Style.RESET_ALL} ")
+        twitch_search(query)
+    elif command == "10":
+        query = input(f"{Fore.RED}Enter Canva search query:{Style.RESET_ALL} ")
+        canva_search(query)
+    elif command == "11":
         break
     else:
         print("Invalid command number. Please try again.")
