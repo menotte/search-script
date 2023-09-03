@@ -15,7 +15,7 @@ def search(query, directory):
     else:
         print("No results found.")
 
-def get_previous_usernames(username):
+def get_previous_usernames(username, directory):
     command = f'curl -s "https://laby.net/api/search/names/{username}"'
     response = os.popen(command).read()
     if response:
@@ -30,7 +30,7 @@ def get_previous_usernames(username):
                     print(f"{Fore.RED}Usernames for {username}:{Style.RESET_ALL}")
                     for name in usernames:
                         print(f"{Fore.RED}Username:{Style.RESET_ALL} {name}")
-                        search(name, "database/")
+                        search(name, directory)
                 else:
                     print("No usernames found for the user.")
             else:
@@ -43,8 +43,20 @@ def get_previous_usernames(username):
 def wakanim_search(query):
     search(query, "wakanim/")
 
-def france_search(query):
-    search(query, "france/")
+def facebook_search(query):
+    search(query, "facebook/")
+
+def fivem_search(query):
+    search(query, "fivem/")
+
+def linkedin_search(query):
+    search(query, "linkedin/")
+
+def twitter_search(query):
+    search(query, "twitter/")
+
+def deezer_search(query):
+    search(query, "deezer/")
 
 title = """
    _____                     _     
@@ -59,27 +71,44 @@ title = """
 
 while True:
     print(f"{Fore.GREEN}{title}{Style.RESET_ALL}\n")
-    print(f"[{Fore.GREEN}1{Style.RESET_ALL}] search")
+    print(f"[{Fore.GREEN}1{Style.RESET_ALL}] minecraft")
     print(f"[{Fore.GREEN}2{Style.RESET_ALL}] final")
     print(f"[{Fore.GREEN}3{Style.RESET_ALL}] wakanim")
-    print(f"[{Fore.GREEN}4{Style.RESET_ALL}] facebook")
-    print(f"[{Fore.GREEN}5{Style.RESET_ALL}] exit")
+    print(f"[{Fore.GREEN}4{Style.RESET_ALL}] fivem")
+    print(f"[{Fore.GREEN}5{Style.RESET_ALL}] linkedin")
+    print(f"[{Fore.GREEN}6{Style.RESET_ALL}] twitter")
+    print(f"[{Fore.GREEN}7{Style.RESET_ALL}] deezer")
+    print(f"[{Fore.GREEN}8{Style.RESET_ALL}] facebook")
+    print(f"[{Fore.GREEN}9{Style.RESET_ALL}] exit")
 
     command = input(f"\n{Fore.GREEN}Enter the command number:{Style.RESET_ALL} ")
 
     if command == "1":
-        query = input(f"{Fore.RED}Enter search query:{Style.RESET_ALL} ")
-        search(query, "database/")
+        query = input(f"{Fore.RED}Enter Minecraft username:{Style.RESET_ALL} ")
+        search(query, "minecraft/")
     elif command == "2":
         username = input(f"{Fore.RED}Enter Minecraft username:{Style.RESET_ALL} ")
-        get_previous_usernames(username)
+        directory = input(f"{Fore.RED}Enter directory to search in : {Style.RESET_ALL}")
+        get_previous_usernames(username, directory)
     elif command == "3":
         query = input(f"{Fore.RED}Enter Wakanim search query:{Style.RESET_ALL} ")
         wakanim_search(query)
     elif command == "4":
-        query = input(f"{Fore.RED}Enter Facebook search query:{Style.RESET_ALL} ")
-        france_search(query)
+        query = input(f"{Fore.RED}Enter FiveM search query:{Style.RESET_ALL} ")
+        fivem_search(query)
     elif command == "5":
+        query = input(f"{Fore.RED}Enter LinkedIn search query:{Style.RESET_ALL} ")
+        linkedin_search(query)
+    elif command == "6":
+        query = input(f"{Fore.RED}Enter Twitter search query:{Style.RESET_ALL} ")
+        twitter_search(query)
+    elif command == "7":
+        query = input(f"{Fore.RED}Enter Deezer search query:{Style.RESET_ALL} ")
+        deezer_search(query)
+    elif command == "8":
+        query = input(f"{Fore.RED}Enter Facebook search query:{Style.RESET_ALL} ")
+        facebook_search(query)
+    elif command == "9":
         break
     else:
         print("Invalid command number. Please try again.")
